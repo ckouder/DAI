@@ -1,5 +1,5 @@
 <template>
-  <div class="columns is-mobile">
+  <div class="columns is-mobile is-gapless">
     <FriendList class="column is-one-third"></FriendList>
     <ChatBox class="column is-two-thirds"></ChatBox>
   </div>
@@ -23,7 +23,8 @@
 </style>
 
 <style>
-  * {
+  html {
     overflow: hidden;
   }
+  
 </style>

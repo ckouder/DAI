@@ -1,21 +1,21 @@
 <template>
-    <div class="is-offset-one-third">
-      <MessageBox></MessageBox>
-      <ToolBar></ToolBar>
-      <EditBox></EditBox>
-    </div>
+  <div class="is-offset-one-third grey-background columns is-desktop">
+    <MessageBox class="column"></MessageBox>
+    <EditBox class="column"></EditBox>
+  </div>
 </template>
 
 <script>
-import ToolBar from './ChatBox/ToolBar'
 import MessageBox from './ChatBox/MessageBox'
 import EditBox from './ChatBox/EditBox'
 
 export default {
-  components: { MessageBox, ToolBar, EditBox }
+  components: { MessageBox, EditBox }
 }
 </script>
 
 <style>
-
+  .grey-background {
+    background: ghostwhite;
+  }
 </style>

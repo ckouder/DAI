@@ -1,5 +1,5 @@
 <template>
-    <ul>
+    <ul class="is-overflow-scroll">
       <Message v-for='message in messages' v-bind:key='message.timestamp' v-bind:msg='message'></Message>
     </ul>
 </template>
@@ -65,5 +65,8 @@ export default {
 </script>
 
 <style>
-
+  .is-overflow-scroll {
+    max-height: 50%;
+    overflow-y: scroll;
+  }
 </style>
