@@ -1,7 +1,7 @@
 <template>
-  <div class="columns is-mobile is-gapless">
-    <FriendList class="column is-one-third"></FriendList>
-    <ChatBox class="column is-two-thirds"></ChatBox>
+  <div class="landingpage">
+    <FriendList></FriendList>
+    <ChatBox></ChatBox>
   </div>
 </template>
 
@@ -25,6 +25,11 @@
 <style>
   html {
     overflow: hidden;
+  }
+
+  .landingpage {
+    display: flex;
+    flex-direction: row;
   }
   
 </style>

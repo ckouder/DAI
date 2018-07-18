@@ -1,7 +1,7 @@
 <template>
-  <div class="is-offset-one-third grey-background columns is-desktop">
-    <MessageBox class="column"></MessageBox>
-    <EditBox class="column"></EditBox>
+  <div class="grey-background chatbox">
+    <MessageBox></MessageBox>
+    <EditBox></EditBox>
   </div>
 </template>
 
@@ -15,6 +15,13 @@ export default {
 </script>
 
 <style>
+  .chatbox {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+
   .grey-background {
     background: ghostwhite;
   }

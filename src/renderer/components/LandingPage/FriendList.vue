@@ -1,11 +1,11 @@
 <template>
-  <aside class="menu is-fixed">
+  <div class="menu">
     <ul class="menu-list">
       <li class="is-active" v-for="friend in friendList" v-bind:key="friend.id">
         <FriendObj v-bind:frd="friend"></FriendObj>
       </li>
     </ul>
-  </aside>
+  </div>
 </template>
 
 <script>
@@ -28,8 +28,6 @@ export default {
 </script>
 
 <style>
-  .is-fixed {
-    position: fixed;
-  }
+
 </style>
 
