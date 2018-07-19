@@ -1,8 +1,8 @@
 <template>
-  <li v-if="msg.participants.from=='mike'" class='is-clearfix'>
-    <div class='bubble bubble-to is-pulled-right'>{{ msg.shell }}</div>
+  <li v-if="msg.participants.from=='mike'">
+    <div class='bubble bubble-to float-right'>{{ msg.shell }}</div>
   </li>
-  <li v-else class='is-clearfix has-text-left' >
+  <li v-else>
     <div class='bubble bubble-from'>{{ msg.shell }}</div>
   </li>
 </template>

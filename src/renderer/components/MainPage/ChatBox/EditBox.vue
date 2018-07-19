@@ -1,8 +1,8 @@
 <template>
   <div class="field">
     <ToolBar></ToolBar>
-    <div class="control">
-      <textarea class="textarea" name="message" id="message" cols="30" rows=5></textarea>
+    <div class="form-group">
+      <textarea class="form-control" name="message" id="message" cols="30" rows=5 placeholder="Input text here.."></textarea>
     </div>
       <button class="button is-primary">Send</button>
   </div>

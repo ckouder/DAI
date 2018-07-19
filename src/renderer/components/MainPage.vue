@@ -1,7 +1,9 @@
 <template>
-  <div class="mainpage">
-    <FriendList class="friendlist"></FriendList>
-    <ChatBox></ChatBox>
+  <div class="container-fluid">
+    <div class="row">
+      <FriendList class="col-3 p-0"></FriendList>
+      <ChatBox class="col-9 p-0"></ChatBox>
+    </div>
   </div>
 </template>
 
@@ -15,26 +17,11 @@
   }
 </script>
 
-<style lang="sass">
-  @import '~normalize.css/normalize.css'
-  @import '~bulma/bulma.sass'
-  @import '~bulma/sass/utilities/initial-variables.sass'
+<style lang="scss">
+  @import '~bootstrap/scss/bootstrap';
+  @import '~normalize.css/normalize';
 
-</style>
-
-<style>
   html {
     overflow: hidden;
   }
-
-  .mainpage {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .friendlist {
-    flex-grow: 2;
-    min-width: 15%;
-  }
-  
 </style>

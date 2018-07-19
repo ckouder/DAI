@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="has-text-centered">
+    <div class="text-center">
       <h1>Login</h1>
       <p>Dictophobia Assistere Implementation</p>
     </div>
@@ -18,16 +18,12 @@
 
 <script>
 export default {
-  name: 'landing-page',
-  methods: {
-
-  }
+  name: 'landing-page'
 }
 </script>
 
-<style lang="sass">
-  @import '~bulma/bulma.sass';
+<style lang="scss">
+  @import '~bootstrap/scss/bootstrap';
 
-  html
-    overflow: hidden
 </style>
+

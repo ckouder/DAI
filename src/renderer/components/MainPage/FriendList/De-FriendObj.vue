@@ -1,8 +1,8 @@
 <template>
     <!-- <img v-bind:src="friend.icon"> -->
     <a v-on:friendActivated="eraseNotification(frd)">
-      <p class="friendname">{{ frd.name }}</p>
-      <NotificationObj class="is-pulled-right" v-bind:num="frd.msgNum"></NotificationObj>
+      {{ frd.name }}
+      <NotificationObj class="" v-bind:num="frd.msgNum"></NotificationObj>
     </a>
 </template>
 
@@ -22,8 +22,6 @@
 </script>
 
 <style>
-  .friendname {
-    display: inline-block;
-  }
+
 </style>
 

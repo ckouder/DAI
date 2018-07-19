@@ -1,8 +1,8 @@
 <template>
-    <div class="tabs is-centered">
-      <ul>
-        <li v-for="addon in addons" v-bind:key="addon.name"><a>{{ addon.name }}</a></li>
-      </ul>
+    <div class="btn-group d-flex justify-content-center pb-2">
+      <button type="button" class="btn btn-outline-dark" v-for="addon in addons" v-bind:key="addon.name">
+        {{ addon.name }}
+      </button>
     </div>
 </template>
 
