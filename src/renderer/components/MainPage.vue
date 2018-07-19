@@ -1,10 +1,12 @@
 <template>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row" @chat-update="updateChat(id)">
       <FriendList class="col-3 p-0" :msgInfo="getMsgInfo"></FriendList>
       <div class="col-9 p-0">
         <div class="row m-0">
-          <MessageBox class="col-12"></MessageBox>
+          <MessageBox class="col-12" 
+          :currentChat="currentChat" 
+          :messages="messages"></MessageBox>
           <EditBox class="col-12"></EditBox>
         </div>
       </div>
@@ -23,7 +25,8 @@
     components: { FriendList, MessageBox, EditBox },
     data () {
       return {
-        messages: Messages
+        messages: Messages,
+        currentChat: undefined
       }
     },
     computed: {
@@ -32,13 +35,19 @@
 
         for (let user of Object.keys(this.messages)) {
           let username = UserCheatSheet[user]
-          
+
           msgInfo[user] = {}
           msgInfo[user].username = username
           msgInfo[user].msgNum = this.messages[user].length
         }
 
         return msgInfo
+      }
+    },
+    methods: {
+      updateChat (id) {
+        this.currentChat = id
+        console.log(this.currentChat)
       }
     }
   }

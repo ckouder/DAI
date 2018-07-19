@@ -4,16 +4,16 @@
     <a 
       href="#"
       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-      v-for="friend in Object.keys(msgInfo)" 
-      v-bind:key="friend"
-      @click="clearNotification(friend)">
+      v-for="id in Object.keys(msgInfo)" 
+      v-bind:key="id"
+      @click="updateChat(id)">
         
         <!-- friend Name and icon -->
-        {{ msgInfo[friend].username }}
+        {{ msgInfoData[id].username }}
 
         <!-- message notifications -->
-        <span v-if="msgInfo[friend].msgNum != 0" class="badge badge-danger budge-pill">
-          {{ msgInfo[friend].msgNum }}
+        <span v-if="msgInfoData[id].msgNum != 0" class="badge badge-danger budge-pill">
+          {{ msgInfoData[id].msgNum }}
         </span>
     </a>
   </div>
@@ -22,9 +22,18 @@
 <script>
 export default {
   props: [ 'msgInfo' ],
+  data () {
+    return {
+      msgInfoData: this.msgInfo
+    }
+  },
   methods: {
-    clearNotification (friend) {
-      msgInfo[friend].msgNum = 0
+    updateChat (id) {
+      this.$emit('chat-update', id)
+      this.clearNotification(id)
+    },
+    clearNotification (id) {
+      this.msgInfoData[id].msgNum = 0
     }
   }
 }

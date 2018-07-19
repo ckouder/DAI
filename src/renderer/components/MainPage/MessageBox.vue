@@ -2,10 +2,8 @@
     <ul class="messagebox">
       <Message 
       v-for='message in messages' 
-      v-bind:key='message.timestamp' 
-      v-bind:msg='message'
-      v-on:friend-activated="console.log(friend.name, 'is activated')"
-      ></Message>
+      :key='message.timestamp' 
+      :message='message'></Message>
     </ul>
 </template>
 
@@ -13,8 +11,13 @@
 import Message from './MessageBox/Message'
 
 export default {
-  name: 'message-box',
-  components: { Message }
+  props: [ 'currentChat', 'messages' ],
+  components: { Message },
+  data () {
+    return {
+      messageData: this.messages
+    }
+  }
 }
 </script>
 
