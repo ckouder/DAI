@@ -4,26 +4,27 @@
     <a 
       href="#"
       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-      v-for="friend in friendList" 
-      v-bind:key="friend.id"
-      @click="updateMessageBoxAndNotifications(friend)">
+      v-for="friend in Object.keys(msgInfo)" 
+      v-bind:key="friend"
+      @click="clearNotification(friend)">
         
         <!-- friend Name and icon -->
-        {{ friend.name }}
+        {{ msgInfo[friend].username }}
 
         <!-- message notifications -->
-        <span v-if="friend.msgNum != 0" class="badge badge-danger budge-pill">{{ friend.msgNum }}</span>
+        <span v-if="msgInfo[friend].msgNum != 0" class="badge badge-danger budge-pill">
+          {{ msgInfo[friend].msgNum }}
+        </span>
     </a>
   </div>
 </template>
 
 <script>
 export default {
-  props: [ 'msgNum' ],
+  props: [ 'msgInfo' ],
   methods: {
-    updateMessageBoxAndNotifications (friend) {
-      friend.msgNum = 0
-      // need to update MessageBox content
+    clearNotification (friend) {
+      msgInfo[friend].msgNum = 0
     }
   }
 }
