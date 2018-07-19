@@ -19,21 +19,11 @@
 
 <script>
 export default {
+  props: [ 'msgNum' ],
   methods: {
     updateMessageBoxAndNotifications (friend) {
       friend.msgNum = 0
       // need to update MessageBox content
-    }
-  },
-  data () {
-    return {
-      friendList: [
-        { id: 0, name: 'Morris', icon: 'morris.icon', msgNum: 5 },
-        { id: 1, name: 'Gold', icon: 'gold.icon', msgNum: 3 },
-        { id: 2, name: 'Lambda', icon: 'lambda.icon', msgNum: 2 },
-        { id: 3, name: 'James', icon: 'lambda.icon', msgNum: 0 },
-        { id: 4, name: 'Ronaldo', icon: 'Ronaldo.icon', msgNum: 99 }
-      ]
     }
   }
 }
