@@ -1,35 +1,33 @@
 <template>
-  <div class="landingpage">
-    <FriendList></FriendList>
-    <ChatBox></ChatBox>
+  <div>
+    <div class="has-text-centered">
+      <h1>Login</h1>
+      <p>Dictophobia Assistere Implementation</p>
+    </div>
+    <form action="login">
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username">
+      <label for="password">Password: </label>
+      <input type="text" name="password" id="password">
+    </form>
+    <button type="submit">
+      Submit
+    </button>
   </div>
 </template>
 
 <script>
-  import ChatBox from './LandingPage/ChatBox'
-  import FriendList from './LandingPage/FriendList'
+export default {
+  name: 'landing-page',
+  methods: {
 
-  export default {
-    name: 'landing-page',
-    components: { FriendList, ChatBox }
   }
+}
 </script>
 
 <style lang="sass">
-  @import '~normalize.css/normalize.css'
-  @import '~bulma/bulma.sass'
-  @import '~bulma/sass/utilities/initial-variables.sass'
+  @import '~bulma/bulma.sass';
 
-</style>
-
-<style>
-  html {
-    overflow: hidden;
-  }
-
-  .landingpage {
-    display: flex;
-    flex-direction: row;
-  }
-  
+  html
+    overflow: hidden
 </style>

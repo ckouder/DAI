@@ -1,6 +1,11 @@
 <template>
     <ul class="messagebox">
-      <Message v-for='message in messages' v-bind:key='message.timestamp' v-bind:msg='message'></Message>
+      <Message 
+      v-for='message in messages' 
+      v-bind:key='message.timestamp' 
+      v-bind:msg='message'
+      v-on:friend-activated="console.log(friend.name, 'is activated')"
+      ></Message>
     </ul>
 </template>
 

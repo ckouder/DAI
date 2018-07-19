@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs">
+    <div class="tabs is-centered">
       <ul>
         <li v-for="addon in addons" v-bind:key="addon.name"><a>{{ addon.name }}</a></li>
       </ul>
