@@ -1,7 +1,9 @@
 <template>
   <div class="container-fluid">
-    <div class="row" @chat-update="updateChat(id)">
-      <FriendList class="col-3 p-0" :msgInfo="getMsgInfo"></FriendList>
+    <div class="row">
+      <FriendList class="col-3 p-0" 
+      :msgInfo="getMsgInfo" 
+      @chat-update="updateChat"></FriendList>
       <div class="col-9 p-0">
         <div class="row m-0">
           <MessageBox class="col-12" 

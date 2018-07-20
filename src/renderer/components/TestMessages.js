@@ -59,11 +59,13 @@ export var Messages = {
       ghost: 'I hope you can lend me some money',
       timeStamp: Date.now() + 4
     }
-  ]
+  ],
+  '991': []
 }
 
 // the following message should get from friendList request
 export var UserCheatSheet = {
-  '1034': 'james',
-  '324': 'kitty'
+  '1034': 'James',
+  '324': 'Kitty',
+  '991': 'Lynn'
 }

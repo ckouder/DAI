@@ -6,7 +6,7 @@
       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
       v-for="id in Object.keys(msgInfo)" 
       v-bind:key="id"
-      @click="updateChat(id)">
+      @click="updateChat(id);">
         
         <!-- friend Name and icon -->
         {{ msgInfoData[id].username }}

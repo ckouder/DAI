@@ -1,8 +1,9 @@
 <template>
     <ul class="messagebox">
       <Message 
-      v-for='message in messages' 
-      :key='message.timestamp' 
+      v-if='currentChat'
+      v-for='message in messageData[currentChat]'
+      :key='message.timestamp'
       :message='message'></Message>
     </ul>
 </template>
@@ -21,7 +22,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+  ul {
+    list-style: none;
+  }
+
   .messagebox {
     background-color: ghostwhite;
     height: 60vh;
