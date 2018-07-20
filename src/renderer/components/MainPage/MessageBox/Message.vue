@@ -19,7 +19,7 @@ export default {
     max-width: 80%;
     padding: .5em 1em;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-    margin-bottom: 2em;
+    margin: 1em 0;
   }
   .bubble-from {
     background: chartreuse;

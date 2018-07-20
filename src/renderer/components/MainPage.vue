@@ -7,7 +7,8 @@
       <div class="col-9 p-0">
         <div class="row m-0">
           <MessageBox class="col-12" 
-          :currentChat="currentChat" 
+          :currentChat="currentChat"
+          :currentFriend="getCurrentFriend"
           :messages="messages"></MessageBox>
           <EditBox class="col-12"></EditBox>
         </div>
@@ -44,12 +45,14 @@
         }
 
         return msgInfo
+      },
+      getCurrentFriend: function () {
+        return UserCheatSheet[this.currentChat]
       }
     },
     methods: {
       updateChat (id) {
         this.currentChat = id
-        console.log(this.currentChat)
       }
     }
   }

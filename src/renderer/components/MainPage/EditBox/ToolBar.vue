@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-group d-flex justify-content-center pb-2">
+    <div class="btn-group d-flex justify-content-center">
       <button type="button" class="btn btn-outline-dark" v-for="addon in addons" :key="addon.name" @click="addon.method">
         {{ addon.name }}
       </button>
