@@ -9,33 +9,23 @@
 
 <script>
 import SettingPanel from './ToolBar/SettingPanel'
+import { Addons } from './addonConfig.js'
 
 export default {
   components: { SettingPanel },
   data () {
+    let addons = Addons(this)
+
+    console.log(addons)
+
     return {
       showSetting: false,
-      addons: [
-        {
-          name: 'Setting',
-          method: () => {
-            this.showSetting = true
-          }
-        },
-        {
-          name: 'Dictionary',
-          method: () => {}
-        },
-        {
-          name: 'Ghost',
-          method: () => {}
-        }
-      ]
+      addons: addons
     }
   },
   methods: {
     closeSetting (state) {
-      this.showSetting = state
+      this.showSetting = false
     }
   }
 }

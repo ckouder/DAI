@@ -1,5 +1,6 @@
 <template>
-  <div v-if="showSetting" class="wrapper" @click="closeSetting">
+  <div v-if="showSetting">
+    <div class="wrapper" @click="closeSetting"></div>
     <div class="setting-panel" :class="{ active: showSetting }">
       <ul class='list-group list-group-flush'>
         <li v-for="item in settings" :key="item.name" class='list-group-item'>
@@ -15,10 +16,13 @@ export default {
   props: [ 'showSetting' ],
   data: () => {
     return {
-      showSetting: this.showSetting,
       settings: [
         {
           name: 'User Profile',
+          method: () => {}
+        },
+        {
+          name: 'Friend Management',
           method: () => {}
         },
         {
@@ -28,14 +32,18 @@ export default {
         {
           name: 'Dictionary Management',
           method: () => {}
+        },
+        {
+          name: 'Logout',
+          method: () => {}
         }
       ]
     }
   },
   methods: {
     closeSetting () {
-      this.showSetting = false
-      this.$emit('close-setting', this.showSetting)
+      console.log('setting is going to close')
+      this.$emit('close-setting')
     }
   }
 }
@@ -43,7 +51,7 @@ export default {
 
 <style scoped>
   * {
-    transition-duration: 2s !important;
+    transition-duration: 1s !important;
   }
 
   .wrapper {
@@ -53,6 +61,7 @@ export default {
     height: 120vh;
     width: 120vw;
     background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
     /* filter: blur(10px); */
   }
 
@@ -64,9 +73,13 @@ export default {
     width: 300px;
     background: #fff;
     box-shadow: -2px 0px 9px black;
+    z-index: 1000;
+    animation: show .5s forwards
   }
 
-  .active {
-    right: 0;
+  @keyframes show {
+    to {
+      right: 0px;
+    }
   }
 </style>
