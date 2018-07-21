@@ -54,7 +54,6 @@
       updateChat (id) {
         this.currentChat = id
         console.log(this.currentChat)
-        debugger
       }
     }
   }
