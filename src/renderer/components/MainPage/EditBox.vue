@@ -3,7 +3,9 @@
     <div class="form-group">
       <textarea class="form-control" name="message" id="message" cols="30" rows=5 placeholder="Input text here.."></textarea>
     </div>
-      <ToolBar @insert-ghost='insertGhost'></ToolBar>
+      <ToolBar 
+      @insert-ghost='insertGhost'
+      @insert-dictionary='insertDictionary'></ToolBar>
   </div>
 </template>
 
@@ -13,20 +15,30 @@ import ToolBar from './EditBox/ToolBar'
 export default {
   name: 'edit-box',
   components: { ToolBar },
+  computed: {
+    messageEl: document.getElementById('message')
+  },
   methods: {
     insertGhost () {
-      let messageEl = document.getElementById('message')
-
-      // console.log(!messageEl.value.search(/(<<).*(>>)/))
-
-      if (!messageEl.value.trim()) {
+      if (!this.messageEl.value.trim()) {
         this.alertTextInput()
-      } else if (messageEl.value.search(/(<<).*(>>)/) === -1) {
+      } else if (this.messageEl.value.search(/(<<).*(>>)/) === -1) {
         console.log('Insert Ghost')
-        messageEl.value += '<< please input your GHOST here >>'
-        messageEl.setSelectionRange(messageEl.value.length - 31, messageEl.value.length - 3)
-        messageEl.focus()
+        this.messageEl.value += '<< please input your GHOST here >>'
+        this.messageEl.setSelectionRange(this.messageEl.value.length - 31, this.messageEl.value.length - 3)
+        this.messageEl.focus()
       }
+    },
+    insertDictionary () {
+      // console.log(this.messageEl.onselect)
+      if (this.messageEl.onselect) {
+        this.messageEl.value = `(${this.messageEl.value})[]`
+        this.messageEl.setSelectionRange(this.messageEl.value.length - 2, this.messageEl.value.length - 2)
+      } else {
+        this.messageEl.value += '()[]'
+        this.messageEl.setSelectionRange(this.messageEl.value.length - 4, this.messageEl.value.length - 4)
+      }
+      this.messageEl.focus()
     },
     alertTextInput () {
       alert('you need to input SHELL first')

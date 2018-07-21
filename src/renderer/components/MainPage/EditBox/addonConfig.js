@@ -11,12 +11,14 @@ var Addons = function (owner) {
     },
     {
       name: 'Dictionary',
-      method: () => {}
+      method: () => {
+        // owner.$emit('insert-dictionary')
+      }
     },
     {
       name: 'Ghost',
       method: () => {
-        console.log('start inserting Ghost Template')
+        // console.log('start inserting Ghost Template')
         owner.$emit('insert-ghost')
       }
     }
