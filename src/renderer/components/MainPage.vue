@@ -10,7 +10,10 @@
           :currentChat="currentChat"
           :currentFriend="getCurrentFriend"
           :messages="messages"></MessageBox>
-          <EditBox class="col-12" v-if="currentChat != undefined"></EditBox>
+          <EditBox 
+          class="col-12" 
+          v-if="currentChat != undefined"
+          @send-message="sendMessage"></EditBox>
         </div>
       </div>
     </div>
@@ -54,6 +57,10 @@
       updateChat (id) {
         this.currentChat = id
         console.log(this.currentChat)
+      },
+      sendMessage (msg) {
+        msg.getBy = this.currentChat
+        msg.postBy = 
       }
     }
   }

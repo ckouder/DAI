@@ -1,6 +1,7 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
+import io from 'socket.io-client'
 
 /**
  * Set `__static` path to static files in production
@@ -20,15 +21,17 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 600,
+    height: 300,
     useContentSize: true,
-    width: 800,
+    width: 400,
     frame: true,
     show: false,
     resizable: false
   })
 
   mainWindow.loadURL(winURL)
+
+  // console.log('hello world')
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
@@ -37,6 +40,15 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
+  receiveInfoFromRenderer()
+}
+
+function receiveInfoFromRenderer () {
+  ipcMain.on('login', (event, arg) => {
+    io('s7.natfrp.org:7735').send(arg)
+  })
+
 }
 
 app.on('ready', createWindow)
