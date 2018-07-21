@@ -12,7 +12,7 @@ var Addons = function (owner) {
     {
       name: 'Dictionary',
       method: () => {
-        // owner.$emit('insert-dictionary')
+        owner.$emit('insert-dictionary')
       }
     },
     {
