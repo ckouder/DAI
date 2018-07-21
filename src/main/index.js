@@ -2,6 +2,7 @@
 
 import { app, BrowserWindow, ipcMain } from 'electron'
 import io from 'socket.io-client'
+const io = require('socket.io')(9999)
 
 /**
  * Set `__static` path to static files in production
@@ -40,15 +41,6 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
-
-  receiveInfoFromRenderer()
-}
-
-function receiveInfoFromRenderer () {
-  ipcMain.on('login', (event, arg) => {
-    io('s7.natfrp.org:7735').send(arg)
-  })
-
 }
 
 app.on('ready', createWindow)
@@ -63,6 +55,15 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
+})
+
+ipcMain.on('login', (event, arg) => {
+  console.log(arg)
+  let buf = Buffer.from(arg)
+
+  let str = buf.toString('ascii')
+  console.log(str)
+  io('s7.natfrp.org:7735').send(str)
 })
 
 /**

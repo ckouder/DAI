@@ -30,28 +30,44 @@ export default {
   name: 'landing-page',
   methods: {
     submitLoginInfo () {
-      this.submitUserInfo('login')
-    },
-    submitRegisterInfo () {
-      this.submitUserInfo('register')
-    },
-    submitUserInfo (type) {
       let username = document.getElementById('username').value
       let password = document.getElementById('password').value
+      let loginData = JSON.stringify({
+        object: 'user',
+        type: 'login',
+        username: username,
+        password: password
+      })
 
       if (username && password) {
-        ipcRenderer.send(type, JSON.stringify({
-          object: 'user',
-          type: type,
-          username: username.toString(),
-          password: password.toString()
-        }))
-
-        console.log('the user information has been sent')
+        ipcRenderer.send('login', loginData)
+        console.log(loginData)
       } else {
         alert('Please enter Username or Password')
       }
-    }
+
+      document.getElementById('password').value = ''
+    },
+    submitRegisterInfo () {
+      let username = document.getElementById('username').value
+      let password = document.getElementById('password').value
+      let loginData = JSON.stringify({
+        object: 'user',
+        type: 'register',
+        username: username,
+        password: password
+      })
+
+      if (username && password) {
+        ipcRenderer.send('register', loginData)
+        console.log(loginData)
+      } else {
+        alert('Please enter Username or Password')
+      }
+
+      document.getElementById('password').value = ''
+    },
+    submitUserInfo (type) {}
   }
 }
 </script>
