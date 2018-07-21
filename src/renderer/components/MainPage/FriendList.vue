@@ -1,9 +1,9 @@
 <template>
-  <div class="list-group list-group-flush">
+  <div class="friend-list list-group list-group-flush">
     <!-- friend object -->
     <a 
       href="#"
-      class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+      class="list-group-item list-group-item-action"
       v-for="id in Object.keys(msgInfo)" 
       v-bind:key="id"
       @click="updateChat(id);">
@@ -12,7 +12,7 @@
         {{ msgInfoData[id].username }}
 
         <!-- message notifications -->
-        <span v-if="msgInfoData[id].msgNum != 0" class="badge badge-danger budge-pill">
+        <span v-if="msgInfoData[id].msgNum != 0" class="badge badge-danger budge-pill float-right">
           {{ msgInfoData[id].msgNum }}
         </span>
     </a>
@@ -40,6 +40,10 @@ export default {
 </script>
 
 <style lang="sass">
-
+  .friend-list
+    height: 100vh
+    overflow-y: scroll
+    .list-group-item
+      height: 90px
 </style>
 

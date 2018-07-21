@@ -10,7 +10,7 @@
           :currentChat="currentChat"
           :currentFriend="getCurrentFriend"
           :messages="messages"></MessageBox>
-          <EditBox class="col-12"></EditBox>
+          <EditBox class="col-12" v-if="currentChat != undefined"></EditBox>
         </div>
       </div>
     </div>

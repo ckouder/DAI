@@ -78,12 +78,38 @@ export var Messages = {
       timeStamp: Date.now() + 4
     }
   ],
-  '991': []
+  '991': [],
+  '992': [],
+  '993': [],
+  '994': [],
+  '995': [],
+  '996': [],
+  '997': [],
+  '998': [],
+  '999': [],
+  '1000': [],
+  '1001': [],
+  '1002': [],
+  '1003': [],
+  '1004': []
 }
 
 // the following message should get from friendList request
 export var UserCheatSheet = {
   '1034': 'James',
   '324': 'Kitty',
-  '991': 'Lynn'
+  '991': 'Lynn',
+  '992': 'Chaos',
+  '993': 'Head',
+  '994': 'Steins',
+  '995': 'Gate',
+  '996': 'Oilva',
+  '997': 'Jason',
+  '998': 'Jack',
+  '999': 'John',
+  '1000': 'Smith',
+  '1001': 'Lee',
+  '1002': 'Go',
+  '1003': 'Lego',
+  '1004': 'Li Guang'
 }
