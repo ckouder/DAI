@@ -2,7 +2,6 @@
 
 import { app, BrowserWindow, ipcMain } from 'electron'
 import io from 'socket.io-client'
-const io = require('socket.io')(9999)
 
 /**
  * Set `__static` path to static files in production
@@ -22,9 +21,9 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 300,
+    height: 600,
     useContentSize: true,
-    width: 400,
+    width: 800,
     frame: true,
     show: false,
     resizable: false

@@ -60,7 +60,7 @@
       },
       sendMessage (msg) {
         msg.getBy = this.currentChat
-        msg.postBy = 
+        msg.postBy = 'mike'
       }
     }
   }
